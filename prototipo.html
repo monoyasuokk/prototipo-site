@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website Title</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pieces+of+Eight&amp;display=swap">
+  <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        html {
+            height: 100%;
+            font-size: 16px; /* Set base font size */
+        }
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Set height to fill viewport height */
+            z-index: -1;
+            overflow: hidden; /* Hide overflowing content */
+        }
+        .background-layer {
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        header {
+            background: black;
+            opacity: 1;
+            padding: 10px 0;
+            text-align: center;
+            overflow: hidden;
+            color: white;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: -webkit-linear-gradient(45deg, yellow, orange);
+            background: linear-gradient(45deg, yellow, orange);
+            border: none;
+            color: transparent;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-family: 'Pieces of Eight', cursive;
+            font-size: 1.5em; /* Adjusted font size */
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+            text-shadow: 0 0 10px black; /* Adjusted text shadow */
+        }
+        .button:hover {
+            transform: scale(1.2);
+        }
+        .social-icons {
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .social-icon {
+            display: inline-block;
+            width: 40px; /* Adjusted icon size */
+            height: 40px; /* Adjusted icon size */
+            margin: 0 10px;
+            background-size: cover;
+            position: relative;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        .content {
+            padding-top: 100px; /* Adjusted padding */
+            color: white;
+            height: auto; /* Remove fixed height */
+            min-height: 100vh; /* Set minimum height to fill viewport */
+        }
+        .second-background-layer {
+            background: url('https://cdn.discordapp.com/attachments/1052066092056580226/1231449482911027211/info_background.png?ex=6636ffb3&is=66248ab3&hm=be750e92a873dc223482d6fdd08ab2227e9a2be5b1df8fe995cd733d26b17a27&') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: -1;
+        }
+        .second-content {
+            color: white;
+            text-align: center;
+            font-size: 2em; /* Adjusted font size */
+            font-family: 'Pieces of Eight', cursive;
+        }
+        .informacoes-container {
+            position: absolute;
+            top: 100%; /* Placed at the end of the page */
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 2;
+        }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <header>
+      <nav>
+        <a href="#" class="button" onclick="scrollToInformacoes()">Informações</a>
+        <a href="#" class="button">Download</a>
+        <a href="https://www.instagram.com/pwrivais/" target="_blank" class="social-icon" style="background-image: url('https://img.icons8.com/?size=512&amp;id=Xy10Jcu1L2Su&amp;format=png');"></a>
+        <a href="https://www.facebook.com/pwrivais" target="_blank" class="social-icon" style="background-image: url('https://img.icons8.com/?size=48&amp;id=13912&amp;format=png');"></a>
+        <a href="https://discord.gg/pwrivais" target="_blank" class="social-icon" style="background-image: url('https://img.icons8.com/?size=512&amp;id=2mIgusGquJFz&amp;format=png');"></a>
+        <a href="#" class="button">Cadastro</a>
+        <a href="#" class="button">Login</a>
+      </nav>
+    </header>
+    <div class="header-divider"></div>
+  </div>
+
+  <div class="background-container">
+    <div class="background-layer" style="background-image: url('https://cdn.discordapp.com/attachments/1052066092056580226/1231437871060357161/capa_nova.png?ex=6636f4e3&amp;is=66247fe3&amp;hm=83b32f3e3d6b94971d833e33d1a5a7b2e20807df859d3e29bda253656ae240e2&amp;')"></div>
+  </div>
+
+  <div id="second-part" class="second-background-layer">
+    <div class="second-content">
+    </div>
+  </div>
+  
+  <div id="informacoes-container" class="informacoes-container">
+    <!-- Your information content goes here -->
+  </div>
+
+  <script>
+    function scrollToInformacoes() {
+      var informacoesContainer = document.getElementById('informacoes-container');
+      informacoesContainer.style.display = 'block';
+      informacoesContainer.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    }
+  </script>
+
+</body>
+</html>
